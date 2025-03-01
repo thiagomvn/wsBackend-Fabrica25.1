@@ -3,20 +3,13 @@ from django.forms.widgets import PasswordInput, TextInput
 from django import forms
 from django.contrib.auth.models import User
 
-#Registrar usuario
+# Registrar usuário
 class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
-#Autenticar usuario
+# Autenticar usuário
 class LoginForm(AuthenticationForm):
-    class Meta:
-        model = User
-        fields = ['username', 'password']
-        widgets = {
-            'username': TextInput(attrs={'class': 'form-control'}),
-            'password': PasswordInput(attrs={'class': 'form-control'}),
-        }
-
-    
+    username = forms.CharField(widget=TextInput(attrs={'class': 'form-control'}))
+    password = forms.CharField(widget=PasswordInput(attrs={'class': 'form-control'}))
