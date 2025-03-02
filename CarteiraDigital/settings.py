@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.carteira',
+    'apps.carteira'
     'apps.authentication'
 ]
 
@@ -81,9 +81,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-#Custom User model
-AUTH_USER_MODEL = 'authentication.CustomUser'
 
 
 # Password validation
